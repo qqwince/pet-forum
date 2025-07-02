@@ -1,3 +1,5 @@
+const i18next = require('i18next');
+
 module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -20,8 +22,13 @@ module.exports = {
         'airbnb',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:i18next/recommended',
     ],
-    plugins: ['react', '@typescript-eslint'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+    ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
