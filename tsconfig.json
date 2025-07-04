@@ -6,13 +6,18 @@
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
-    "moduleResolution": "node",
+    "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/app/types"
+    ],
+    "moduleResolution": "node"
   },
   "ts-node": {
     "transpileOnly": true,
@@ -20,5 +25,10 @@
       "module": "CommonJS",
       "esModuleInterop": true
     }
-  }
+  },
+  "include": [
+    "src/**/*",
+    "src/app/types/global.d.ts",
+    "config/jest/setupTests.ts"
+  ]
 }
