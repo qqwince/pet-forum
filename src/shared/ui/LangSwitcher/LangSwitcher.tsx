@@ -20,7 +20,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
             onClick={toggle}
             theme={ThemeButton.CLEAR}
         >
-            {t('Перевод')}
+            {t('Язык')}
         </Button>
     );
 };
