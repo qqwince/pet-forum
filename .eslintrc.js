@@ -45,8 +45,8 @@ module.exports = {
             },
         ],
         'max-len': ['warn', { ignoreComments: true, code: 100 }],
-        'linebreak-style': ['error', 'windows'],
         'import/no-absolute-path': 'off',
+        'linebreak-style': 0,
     },
     globals: {
         __IS_DEV__: true,
