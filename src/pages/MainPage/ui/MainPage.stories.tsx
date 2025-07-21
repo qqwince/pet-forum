@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { MainPage } from 'pages/MainPage';
+import MainPage from './MainPage';
 
 export default {
     title: 'pages/MainPage',
@@ -13,7 +13,8 @@ export default {
     },
 } as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...args} />;
+// eslint-disable-next-line react/prop-types
+const Template: ComponentStory<typeof MainPage> = ({ args }) => <MainPage {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
