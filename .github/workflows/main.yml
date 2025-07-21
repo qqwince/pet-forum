@@ -6,6 +6,7 @@ on:
         branches: [ main ]
 jobs:
     pipeline:
+        timeout-minutes: 10
         runs-on: ubuntu-latest
         strategy:
             matrix:
