@@ -48,12 +48,13 @@ jobs:
             - name: Build Storybook
               run: npm run storybook:build
 
-            - name: Run Loki screenshot tests
+            - name: Run screenshot tests
               env:
                   DEBUG: "loki"
                   CHROMIUM_FLAGS: --no-sandbox --disable-gpu --disable-dev-shm-usage
                   LOKI_CHROMIUM_SANDBOX_DISABLED: "true"
               run: npm run test:ui:ci
+
 
             - name: Upload Loki screenshots on failure
               if: failure()
