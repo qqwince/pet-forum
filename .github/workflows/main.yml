@@ -19,12 +19,8 @@ jobs:
                   node-version: ${{  matrix.node-version  }}
             - name: install modules
               run: npm install
-            - name: Install Microsoft fonts (accept EULA)
-              run: |
-                  echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
-                  sudo apt-get update
-                  sudo apt-get install -y ttf-mscorefonts-installer
-                  sudo fc-cache -f -v
+            - name: is DejaVu Sans Mono installed?
+              run: fc-list | grep "DejaVu Sans Mono"
             - name: build project
               run: npm run build:prod
             - name: linting typescript
