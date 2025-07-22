@@ -1,62 +1,33 @@
 name: linting, testing, building
 on:
     push:
-        branches: [main]
+        branches: [ main ]
     pull_request:
-        branches: [main]
+        branches: [ main ]
 jobs:
     pipeline:
-        timeout-minutes: 15
+        timeout-minutes: 10
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node-version: [22.x]
+                node-version: [ 22.x ]
         steps:
-            - uses: actions/checkout@v4
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
+            - uses: actions/checkout@v2
+            - name: Starting Node js ${{  matrix.node-version  }}
+              uses: actions/setup-node@v1
               with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'npm'
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Build project
+                  node-version: ${{  matrix.node-version  }}
+            - name: install modules
+              run: npm install
+            - name: build project
               run: npm run build:prod
-
-            - name: Lint TypeScript
+            - name: linting typescript
               run: npm run lint:ts
-
-            - name: Lint SCSS
+            - name: linting scss
               run: npm run lint:scss
-
-            - name: Unit tests
+            - name: unit testing
               run: npm run test:unit
-
-            - name: Build Storybook
+            - name: build storybook
               run: npm run storybook:build
-
-            - name: Prepare for screenshot tests
-              run: |
-                  mkdir -p .loki/reference
-                  # Копируем эталонные скриншоты если они есть в репозитории
-                  [ -d loki/reference ] && cp -r loki/reference .loki/ || true
-
-            - name: Run Loki tests
-              timeout-minutes: 5
-              run: |
-                  # Даём Storybook время на инициализацию
-                  sleep 3
-                  npm run test:ui:ci
-
-            - name: Upload differences if failed
-              if: failure()
-              uses: actions/upload-artifact@v4
-              with:
-                  name: loki-differences
-                  path: |
-                      .loki/difference
-                      .loki/current
-                  retention-days: 1  # Автоматическая очистка через 1 день
+            - name: screenshot testing
+              run: npm run test:ui:ci
