@@ -19,8 +19,10 @@ jobs:
                   node-version: ${{  matrix.node-version  }}
             - name: install modules
               run: npm install
-            - name: Install DejaVu fonts
-              run: sudo apt-get install -y fonts-dejavu-core
+            - name: Install fonts
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y fonts-dejavu-core fonts-dejavu fonts-liberation fontconfig
             - name: is DejaVu Sans Mono installed?
               run: fc-list | grep "DejaVu Sans Mono"
             - name: build project
@@ -35,6 +37,7 @@ jobs:
               run: npm run storybook:build
             - name: Run screenshot tests
               env:
-                  CHROMIUM_FLAGS: --no-sandbox --disable-gpu --disable-dev-shm-usage --disable-setuid-sandbox --no-zygote
+                  DEBUG: "loki"
+                  CHROMIUM_FLAGS: --no-sandbox --disable-gpu --disable-dev-shm-usage
                   LOKI_CHROMIUM_SANDBOX_DISABLED: "true"
               run: npm run test:ui:ci
