@@ -57,7 +57,7 @@ jobs:
 
             - name: Upload Loki screenshots on failure
               if: failure()
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: loki-failed-snapshots
                   path: .loki
