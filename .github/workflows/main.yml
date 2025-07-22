@@ -10,6 +10,7 @@ jobs:
     pipeline:
         timeout-minutes: 10
         runs-on: ubuntu-latest
+
         strategy:
             matrix:
                 node-version: [ 22.x ]
@@ -17,8 +18,8 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Starting Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
 
@@ -30,10 +31,10 @@ jobs:
                   sudo apt-get update
                   sudo apt-get install -y fonts-dejavu-core fonts-dejavu fonts-liberation fontconfig
 
-            - name: Verify DejaVu Sans Mono installed
+            - name: Check font installed
               run: fc-list | grep "DejaVu Sans Mono" || true
 
-            - name: Build project
+            - name: Build production project
               run: npm run build:prod
 
             - name: Lint TypeScript
@@ -45,18 +46,17 @@ jobs:
             - name: Run unit tests
               run: npm run test:unit
 
-            - name: Build Storybook
+            - name: Build Storybook for visual regression
               run: npm run storybook:build
 
-            - name: Run screenshot tests
+            - name: Run Loki visual regression tests
               env:
                   DEBUG: "loki"
                   CHROMIUM_FLAGS: --no-sandbox --disable-gpu --disable-dev-shm-usage
                   LOKI_CHROMIUM_SANDBOX_DISABLED: "true"
               run: npm run test:ui:ci
 
-
-            - name: Upload Loki screenshots on failure
+            - name: Upload failed visual snapshots
               if: failure()
               uses: actions/upload-artifact@v4
               with:
