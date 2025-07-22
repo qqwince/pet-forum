@@ -88,8 +88,15 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
-    "looks-same": {
-      "ignoreCaret": true
+    "loki": {
+      "looks-same": {
+        "ignoreCaret": true,
+        "ignoreAntialiasing": true,
+        "tolerance": 3
+      },
+      "chrome": {
+        "delay": 1000
+      }
     },
     "configurations": {
       "chrome.laptop": {

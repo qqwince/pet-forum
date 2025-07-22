@@ -12,6 +12,10 @@ export const parameters = {
             date: /Date$/,
         },
     },
+    loki: {
+        waitForAnimations: true,
+        chromeSelector: '#root > *',
+    },
 };
 
 addDecorator(StyleDecorator);
