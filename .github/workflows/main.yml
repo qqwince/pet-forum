@@ -19,6 +19,11 @@ jobs:
                   node-version: ${{  matrix.node-version  }}
             - name: install modules
               run: npm install
+            - name: Install Microsoft Fonts
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y ttf-mscorefonts-installer
+                  sudo fc-cache -f -v
             - name: build project
               run: npm run build:prod
             - name: linting typescript
