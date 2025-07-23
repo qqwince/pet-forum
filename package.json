@@ -80,8 +80,6 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
-    "chromeSelector": "#storybook-root > *",
-    "chromeFlags": "--no-sandbox",
     "diffingEngine": "pixelmatch",
     "configurations": {
       "chrome.laptop": {
