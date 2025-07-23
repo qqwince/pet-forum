@@ -11,4 +11,7 @@ module.exports = {
     core: {
         builder: 'webpack5',
     },
+    presets: [
+        '@storybook/preset-create-react-app',
+    ],
 };
