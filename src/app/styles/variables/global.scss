@@ -23,7 +23,9 @@
     --sidebar-width-collapsed: 80px;
 }
 
-*, *::before, *::after {
+*::before,
+*::after,
+* {
     font-weight: var(--font-weight-main);
     letter-spacing: var(--letter-spacing-main);
     box-sizing: border-box;
