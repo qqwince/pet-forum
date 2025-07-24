@@ -14,6 +14,7 @@ body {
     font-size: 16px;
     line-height: 24px;
     min-height: 100vh;
+    letter-spacing: var(--letter-spacing-main);
 }
 
 // .app {
@@ -40,3 +41,8 @@ body {
 //     -moz-osx-font-smoothing: grayscale;
 //     vertical-align: text-top;
 // }
+html, body {
+    /* Force antialiased rendering everywhere */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

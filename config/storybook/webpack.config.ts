@@ -28,5 +28,14 @@ export default ({ config }: {config: webpack.Configuration}) => {
     });
     config.module.rules.push(buildCssLoader(true));
 
+    const fontRule: RuleSetRule = {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: 'static/media/[name].[hash][ext]',
+        },
+    };
+    config.module.rules.push(fontRule);
+
     return config;
 };
