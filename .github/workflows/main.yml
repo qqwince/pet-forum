@@ -73,3 +73,9 @@ jobs:
               with:
                   name: loki-refs
                   path: .loki/reference
+            - name: Upload Loki screenshot cur
+              if: failure()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: loki-curs
+                  path: .loki/current
