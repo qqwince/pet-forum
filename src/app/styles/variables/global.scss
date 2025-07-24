@@ -3,29 +3,22 @@
     src: url("../../shared/assets/fonts/consolas.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
+    font-display: block;
 }
 
 :root {
-    // --font-family-main: sans-serif;
     --font-family-main: consolassuper;
     --font-size-m: 16px;
-    --font-line-m: 24px;
+    --font-line-m: 1.5;
     --font-weight-main: 400;
     --letter-spacing-main: 0.015em;
     --font-m: var(--font-weight-main) var(--font-size-m) / var(--font-line-m) var(--font-family-main);
     --font-size-l: 24px;
-    --font-line-l: 32px;
+    --font-line-l: 1.333;
     --font-l: var(--font-weight-main) var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
-    // Размеры
+    // размеры
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
-}
-
-*::before,
-*::after,
-* {
-    font-weight: var(--font-weight-main);
-    letter-spacing: var(--letter-spacing-main);
 }

@@ -30,3 +30,13 @@ body {
     flex-grow: 1;
     padding: 20px;
 }
+
+*::before,
+*::after,
+* {
+    font-weight: var(--font-weight-main);
+    letter-spacing: var(--letter-spacing-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: text-top;
+}
