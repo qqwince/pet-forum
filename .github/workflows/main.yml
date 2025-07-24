@@ -67,3 +67,9 @@ jobs:
               with:
                   name: loki-diffs
                   path: .loki/difference
+            - name: Upload Loki screenshot ref
+              if: failure()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: loki-refs
+                  path: .loki/reference
