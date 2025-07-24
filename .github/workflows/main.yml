@@ -8,8 +8,8 @@ on:
 
 jobs:
     pipeline:
+        runs-on: windows-2022
         timeout-minutes: 10
-        runs-on: win
         strategy:
             matrix:
                 node-version: [22.x]
