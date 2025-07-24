@@ -89,6 +89,7 @@
   },
   "loki": {
     "configurations": {
+
       "chrome.laptop": {
         "target": "chrome.app",
         "width": 1366,
@@ -109,8 +110,5 @@
         ]
       }
     }
-  },
-  "resolutions": {
-    "puppeteer": "^21.3.8"
   }
 }
