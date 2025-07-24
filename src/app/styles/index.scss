@@ -1,27 +1,14 @@
 @import "reset";
 @import "variables/global";
-@import "themes/dark";
 @import "themes/normal";
-
-body {
-    font-weight: 400;
-}
+@import "themes/dark";
 
 .app {
     font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);
-    font-size: 16px;
-    line-height: 24px;
     min-height: 100vh;
-    letter-spacing: var(--letter-spacing-main);
 }
-
-// .app {
-//     font-family: var(--font-family-main);
-//     font-weight: 400;
-//     letter-spacing: 0.015em;
-// }
 
 .content-page {
     display: flex;
@@ -30,20 +17,4 @@ body {
 .page-wrapper {
     flex-grow: 1;
     padding: 20px;
-}
-
-// *::before,
-// *::after,
-// * {
-//     font-weight: var(--font-weight-main);
-//     letter-spacing: var(--letter-spacing-main);
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//     vertical-align: text-top;
-// }
-html,
-body {
-    /* Force antialiased rendering everywhere */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
