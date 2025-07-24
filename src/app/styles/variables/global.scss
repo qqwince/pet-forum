@@ -1,6 +1,13 @@
+@font-face {
+    font-family: consolassuper;
+    src: url("../../shared/assets/fonts/consolas.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 :root {
     // --font-family-main: sans-serif;
-    --font-family-main: consolas;
+    --font-family-main: consolassuper;
     --font-size-m: 16px;
     --font-line-m: 24px;
     --font-weight-main: 400;
