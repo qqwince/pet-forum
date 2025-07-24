@@ -11,8 +11,14 @@ body {
     font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);
-    min-height: 100vh;
+    font-size: 16px;
+    line-height: 24px;
 }
+// .app {
+//     font-family: var(--font-family-main);
+//     font-weight: 400;
+//     letter-spacing: 0.015em;
+// }
 
 .content-page {
     display: flex;
