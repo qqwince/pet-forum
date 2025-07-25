@@ -25,17 +25,25 @@ jobs:
             - name: Install dependencies
               run: npm install
 
+            - name: Build prod
+              run: npm run build:prod
+              if: always()
+
             - name: Lint TypeScript
               run: npm run lint:ts
+              if: always()
 
             - name: Lint SCSS
               run: npm run lint:scss
+              if: always()
 
             - name: Run unit tests
               run: npm run test:unit
+              if: always()
 
             - name: Build Storybook
               run: npm run storybook:build
+              if: always()
 
             - name: Run screenshot tests
               env:
@@ -43,6 +51,7 @@ jobs:
                   CHROMIUM_FLAGS: --no-sandbox --disable-gpu --disable-dev-shm-usage
                   LOKI_CHROMIUM_SANDBOX_DISABLED: "true"
               run: npm run test:ui:ci
+              if: always()
 
             - name: Debug - list .loki files
 
