@@ -5,7 +5,6 @@ import 'app/styles/index.scss';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { SecondaryDark } from 'shared/ui/AppLink/AppLink.stories';
 import { Loader } from './Loader';
 
 export default {

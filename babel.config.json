@@ -8,12 +8,5 @@
       }
     ],
     "@babel/preset-typescript"
-  ],
-  "plugins": [
-    ["i18next-extract", {
-      "locales": ["en", "ru"],
-      "keyAsDefaultValue": true,
-      "outputPath": "./public/locales/{{locale}}/translation.json"
-    }]
   ]
 }
