@@ -11,10 +11,10 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
-    const [isauthModal, setIsAuthModal] = useState(false);
+    const [isAuthModal, setisAuthModal] = useState(false);
 
     const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+        setisAuthModal((prev) => !prev);
     }, []);
 
     return (
@@ -26,7 +26,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            <Modal isOpen={isauthModal} onClose={onToggleModal}>
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
                 {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut, eligendi, illum incidunt inventore minus molestias numquam obcaecati odit quam recusandae vel vitae? Dolore et id neque quidem repellat voluptas!')}
             </Modal>
         </div>
