@@ -13,7 +13,7 @@
     color: transparent;
     text-shadow: 0 0 0 var(--primary-color);
 
-    &:focus{
+    &:focus {
         border: none;
         outline: none;
     }
@@ -35,13 +35,15 @@
 }
 
 @keyframes blink {
-    0%{
+    0% {
         opacity: 0;
     }
-    50%{
+
+    50% {
         opacity: 0.01;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
