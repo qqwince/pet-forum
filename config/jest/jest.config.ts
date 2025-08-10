@@ -29,10 +29,11 @@ export default {
     rootDir: '../../',
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     transform: {
+        '^.+\\.(ts|tsx)?$': 'babel-jest',
         '^.+\\.(ts|tsx)$': 'babel-jest',
     },
     transformIgnorePatterns: [
-        '\\\\node_modules\\\\',
+        'node_modules/(?!axios/)',
     ],
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',

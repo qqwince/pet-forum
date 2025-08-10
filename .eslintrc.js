@@ -45,7 +45,7 @@ module.exports = {
                 ignoreAttribute: ['data-testid', 'to'],
             },
         ],
-        'max-len': ['warn', { ignoreComments: true, code: 100 }],
+        'max-len': ['warn', { ignoreComments: true, code: 120 }],
         'import/no-absolute-path': 'off',
         'linebreak-style': 0,
         'jsx-a11y/no-static-element-interactions': 'off',
